@@ -1,21 +1,21 @@
 module.exports = startup
 
-function startup(conf,fw,cb) {
+function startup(conf, fw, cb) {
     var async = require('async')
     async.waterfall([
-        function(callback) {
+        function (callback) {
             var socketManager = require('./socket-manager');
-            var socketManager = new socketManager(conf,fw);
+            var socketManager = new socketManager(conf, fw);
             callback()
         },
-        function(callback) {
-            var start = require(conf.directory + '/server/'+conf.component+'/startup.js');
-            start = new start(fw,callback);
+        function (callback) {
+            var start = require(conf.directory + '/eventServer/' + conf.component + '/startup.js');
+            start = new start(fw, callback);
         },
-        function(callback) {
+        function (callback) {
             cb({
-                status : 200
+                status: 200
             })
         }
-    ]) 
+    ])
 }
