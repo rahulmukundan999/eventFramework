@@ -9,7 +9,7 @@ function startup(conf, fw, cb) {
             callback()
         },
         function (callback) {
-            var start = require(conf.directory + '/eventServer/' + conf.component + '/startup.js');
+            var start = require(conf.directory + '/server/' + conf.component + '/startup.js');
             start = new start(fw, callback);
         },
         function (callback) {
