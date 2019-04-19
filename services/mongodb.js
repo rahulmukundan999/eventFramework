@@ -11,7 +11,7 @@ function mongodb() {
 
     function connectDb(dbName, cb) {
         // var url = 'mongodb://localhost:27017';
-        var url = 'mongodb://rahul:rahul1234@ds127731.mlab.com:27731/eventest'
+        var url = 'mongodb://rahul:rahul1234@ds127731.mlab.com:27731'
         MongoClient.connect(url, {
                 reconnectTries: 5,
                 reconnectInterval: 1000 * 5
