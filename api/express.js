@@ -11,7 +11,14 @@ function express() {
     app.use(bodyParser.urlencoded({
         extended: true
     }));
-    app.use(bodyParser.json()); // app.use(fileUpload());
+    // app.use(bodyParser.json());
+    app.use(bodyParser.json({
+        limit: '50mb'
+    }));
+    app.use(bodyParser.urlencoded({
+        limit: '50mb',
+        extended: true
+    })); // app.use(fileUpload());
     this.startService = startService;
 
     function startService(conf, cb) {
